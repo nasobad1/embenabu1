@@ -13,17 +13,47 @@
 		<script type="text/javascript" src="./js/functions.js" charset="utf-8"></script>
 		<script type="text/javascript" src="./js/love.js" charset="utf-8"></script>
 	    <style type="text/css">
+		
+		
 <!--
-.STYLE1 {color: #666666}
+.STYLE1 {color: #fffddf}
 -->
         </style>
 </head>
+<meta charset="UTF-8" />
+  <title>Website với Logo</title>
+  <style>
+    .logo-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 200px; /* tăng kích thước logo */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo chữ L và rồng châu Á">
+  </div>
+
+  <!-- Nội dung website ở đây -->
  <meta charset="UTF-8">
   <title>Chat với Long</title>
-  <style>
-    /* Nút mở chat */
-    #chat-button {
-      position: fixed;
+ <style>
+  /* Nền trang */
+  body {
+    background-color: #fffddf  !important;
+  }
+
+  /* Nút mở chat */
+  #chat-button {
+    position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #cf6cc0;
@@ -312,7 +342,7 @@
             tree.snapshot("p2", 500, 0, 610, 680);
 
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
+            canvas.css("background", "#fffddf");
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
@@ -366,7 +396,7 @@
 </html>
 <style>
 	#snowflakeContainer{position:absolute;left:0px;top:0px;}
-	.snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#e77bd4;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
+	.snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#ebebeb;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
 	.snowflake:hover {cursor:default}
 </style>
 <div id='snowflakeContainer'>
@@ -379,7 +409,7 @@
 </script>
 <div style="text-align: center;">
    <audio id="myAudio">
-  <source src="sound1.m4a" type="audio/mpeg">
+  <source src="./mp3/sound1.m4a" type="audio/mpeg">
 </audio>
 
 <script>
