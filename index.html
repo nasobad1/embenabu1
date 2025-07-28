@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="icon" type="image/png" href="image/favicon.ico">
 		<title>❤️ Nguyễn Ngân Hà ❤️</title>	    
@@ -18,6 +18,156 @@
 -->
         </style>
 </head>
+ <meta charset="UTF-8">
+  <title>Chat với Long</title>
+  <style>
+    /* Nút mở chat */
+    #chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #cf6cc0;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    /* Hộp chat */
+    #chat-box {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    #chat-header {
+      background-color: #cf6cc0;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    #chat-messages {
+      height: 250px;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    #chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-right: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    #chat-input button {
+      padding: 10px;
+      background-color: #cf6cc0;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nút mở chat -->
+<button id="chat-button">💬 Chat với chúng tôi</button>
+
+<!-- Hộp chat -->
+<div id="chat-box">
+  <div id="chat-header">Hỗ Trợ Trực Tuyến</div>
+  <div id="chat-messages">
+    <div><em>Xin chào! Bạn cần hỗ trợ gì?</em></div>
+  </div>
+  <div id="chat-input">
+    <input type="text" id="chat-text" placeholder="Nhập tin nhắn...">
+    <button onclick="sendMessage()">Gửi</button>
+  </div>
+</div>
+
+<script>
+  const chatButton = document.getElementById("chat-button");
+  const chatBox = document.getElementById("chat-box");
+
+  // Hiện/ẩn chat
+  chatButton.onclick = function () {
+    chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+  };
+
+  // Gửi tin nhắn
+  function sendMessage() {
+    const input = document.getElementById("chat-text");
+    const message = input.value.trim();
+    if (message !== "") {
+      const chatMessages = document.getElementById("chat-messages");
+      
+      const userMessage = document.createElement("div");
+      userMessage.textContent = "Bạn: " + message;
+      chatMessages.appendChild(userMessage);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      input.value = "";
+
+      setTimeout(() => {
+        autoReply(message.toLowerCase());
+      }, 800);
+
+      // Lưu vào localStorage
+      setTimeout(() => {
+        localStorage.setItem("chatHistory", chatMessages.innerHTML);
+      }, 1000);
+    }
+  }
+
+  // Tự động phản hồi dựa vào từ khóa
+  function autoReply(message) {
+    const chatMessages = document.getElementById("chat-messages");
+    const reply = document.createElement("div");
+    let response = "";
+
+    if (message.includes("xin chào")) {
+      response = "Chào bạn, đây là tin nhắn trả lời tự động, tôi có thể giúp gì cho bạn?";
+    } else if (message.includes("online") || message.includes("thời gian")) {
+      response = "Chúng tôi online vào lúc 16:00 tới 3:00 các ngày trong tuần";
+    } else if (message.includes("địa chỉ")) {
+      response = "Địa chỉ của chúng tôi: Thành phố Đà Nẵng";
+    } else {
+      response = "Cảm ơn bạn! Chúng tôi sẽ phản hồi sớm nhất.";
+    }
+
+    reply.innerHTML = "<em>" + response + "</em>";
+    chatMessages.appendChild(reply);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Khôi phục lịch sử chat
+  window.onload = () => {
+    const saved = localStorage.getItem("chatHistory");
+    if (saved) {
+      document.getElementById("chat-messages").innerHTML = saved;
+    }
+  };
+</script>
     <body>
         <div id="main">
              <div id="wrap">
@@ -30,17 +180,18 @@
 						<span class="say">Em đáng yêu nhất ❤️</span><br>
 						<span class="say">Em cũng yêu anh nhất ❤️</span><br>
 						<span class="say">Em là một điều may mắn trong cuộc sống của anh ❤️</span><br>
-						<span class="say">..."Có em, anh sẽ chẳng cần điều gì khác em ❤️"</span><br>
+						<span class="say">..."Có em, anh sẽ chẳng cần điều gì khác ngoài em ️❤️"</span><br>
 						<span class="say">Yêu em cho đến khi hai ta cùng già đi ❤️</span><br>
-						<span class="say">Hãy cứ tin anh em nhé.Ta sẽ có một chuyến đi thật dài và cùng chăm sóc Tâm và Duyên nhé ❤️</span><br>
+						<span class="say">Hãy cứ tin anh em nhé.Ta sẽ có một chuyến đi thật dài và cùng chăm sóc Thiên Tâm và Thiên Duyên em nhé ❤️</span><br>
 						<span class="say"> </span><br>
                         <span class="say"><span class="space"></span> ❤️ Yêu vợ thật nhiều ❤️</span>
+						<span class="say"><span class="space"></span> ❤️  ❤️</span>
 			  </font></p>
       </div>
                 </div>
                 <div id="clock-box">
                     <span class="STYLE1"></span><font color="#FF0000">Long Thành Võ ❤️ Nguyễn Ngân Hà </font>
-<span class="STYLE1"> Time of love...</span>
+<span class="STYLE1"> Time Of Loveee..</span>
                   <div id="clock"></div>
               </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
@@ -207,7 +358,7 @@
     })();
     </script>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-<p>Contact: <a href="http://fb.com/ltv.lepsobad" target="_blank">Long Thành Võ</a></p>
+<p>Mọi thắc mắc xin liên hệ: <a href="http://fb.com/ltv.lepsobad" target="_blank">Long Thành Võ</a></p>
 </div>
 
 
@@ -227,10 +378,23 @@
 	//]]>
 </script>
 <div style="text-align: center;">
-    <audio controls autoplay>
-    <source src="./mp3/sound.mp3" type="audio/ogg">
-    </audio>
+   <audio id="myAudio">
+  <source src="./mp3/sound1.m4a" type="audio/mpeg">
+</audio>
+
+<script>
+  function tryPlayAudio() {
+    const audio = document.getElementById("myAudio");
+    audio.play().catch(() => {
+      // Nếu bị chặn, đợi người dùng tương tác
+      document.addEventListener("click", () => audio.play(), { once: true });
+    });
+  }
+
+  window.addEventListener("load", tryPlayAudio);
+</script>
 </div>
+
 
 
 
