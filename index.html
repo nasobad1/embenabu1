@@ -21,7 +21,7 @@
         </style>
 </head>
 <<meta charset="UTF-8">
-  <title>Logo Rồng Góc Trái</title>
+  <title>Logo Rồng Xoay</title>
   <style>
     body {
       background-color: #fffddf;
@@ -34,8 +34,9 @@
       left: 20px;
       width: 150px;
       height: 150px;
-      animation: glow 3s ease-in-out infinite;
+      animation: rotate 50s linear infinite, glow 3s ease-in-out infinite;
       z-index: 9999;
+      transform-origin: center center;
     }
 
     .logo-container img {
@@ -44,12 +45,22 @@
       object-fit: contain;
     }
 
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
     @keyframes glow {
       0%, 100% {
         filter: drop-shadow(0 0 5px gold);
       }
       50% {
-        filter: drop-shadow(0 0 15px goldenrod);
+        filter: drop-shadow(0 0 20px goldenrod);
+		drop-shadow(0 0 20px orange);
       }
     }
   </style>
@@ -58,7 +69,6 @@
   <div class="logo-container">
     <img src="logo.png" alt="Logo Rồng Chữ H">
   </div>
-
   <!-- Nội dung website ở đây -->
  <meta charset="UTF-8">
   <title>Chat với Long</title>
