@@ -20,26 +20,43 @@
 -->
         </style>
 </head>
-<meta charset="UTF-8" />
-  <title>Website với Logo</title>
+<<meta charset="UTF-8">
+  <title>Logo Rồng Góc Trái</title>
   <style>
+    body {
+      background-color: #fffddf;
+      margin: 0;
+    }
+
     .logo-container {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      z-index: 1000;
+      width: 150px;
+      height: 150px;
+      animation: glow 3s ease-in-out infinite;
+      z-index: 9999;
     }
 
     .logo-container img {
-      width: 200px; /* tăng kích thước logo */
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px gold);
+      }
+      50% {
+        filter: drop-shadow(0 0 15px goldenrod);
+      }
     }
   </style>
 </head>
 <body>
-
   <div class="logo-container">
-    <img src="logo.png" alt="Logo chữ L và rồng châu Á">
+    <img src="logo.png" alt="Logo Rồng Chữ H">
   </div>
 
   <!-- Nội dung website ở đây -->
