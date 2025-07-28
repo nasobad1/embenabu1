@@ -19,7 +19,52 @@
 <!--
 .STYLE1 {color: #fd24c7}
 -->
-        </style>
+        
+/* Slideshow nằm giữa logo và chat */
+.slideshow-bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  z-index: 9998;
+  background-color: rgba(#fffddf);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow-bottom .slide {
+  display: none;
+}
+
+.slideshow-bottom img {
+  max-height: 200px;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.slideshow-bottom .prev,
+.slideshow-bottom .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #832c2c;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: rgba(#fffddf);
+  padding: 4px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slideshow-bottom .prev { left: 5px; }
+.slideshow-bottom .next { right: 5px; }
+
+</style>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -95,6 +140,25 @@
 <div class="logo-container">
 <img alt="Logo Rồng Chữ H" src="logo.png"/>
 </div>
+
+<!-- Slideshow ảnh nằm giữa logo và chat -->
+<div class="slideshow-bottom">
+  <div class="slide"><img src="image1.jpg" alt="Ảnh 1"></div>
+  <div class="slide"><img src="image2.jpg" alt="Ảnh 2"></div>
+  <div class="slide"><img src="image3.jpg" alt="Ảnh 3"></div>
+  <div class="slide"><img src="image4.jfif" alt="Ảnh 4"></div>
+  <div class="slide"><img src="image5.jfif" alt="Ảnh 5"></div>
+  <div class="slide"><img src="image6.jfif" alt="Ảnh 6"></div>
+  <div class="slide"><img src="image7.jfif" alt="Ảnh 7"></div>
+  <div class="slide"><img src="image8.jfif" alt="Ảnh 8"></div>
+  <div class="slide"><img src="image9.jfif" alt="Ảnh 9"></div>
+  <div class="slide"><img src="image10.jfif" alt="Ảnh 10"></div>
+  <div class="slide"><img src="image11.jfif" alt="Ảnh 11"></div>
+  <div class="slide"><img src="image12.jfif" alt="Ảnh 12"></div>
+  <div class="prev" onclick="plusSlides(-1)">❮</div>
+  <div class="next" onclick="plusSlides(1)">❯</div>
+</div>
+
 <!-- Nội dung website ở đây -->
 <meta charset="utf-8"/>
 <title>Chat với Long</title>
@@ -436,6 +500,32 @@
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 <p>Mọi thắc mắc xin liên hệ: <a href="http://fb.com/ltv.lepsobad" target="_blank">Long Thành Võ </a></p>
 </div>
+
+<script>
+  let slideIndex = 0;
+  let slides = document.querySelectorAll(".slideshow-bottom .slide");
+
+  function showSlides(n) {
+    slides.forEach(s => s.style.display = "none");
+    slides[n].style.display = "block";
+  }
+
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    showSlides(slideIndex);
+  }
+
+  function autoSlide() {
+    plusSlides(1);
+    setTimeout(autoSlide, 4000);
+  }
+
+  showSlides(slideIndex);
+  autoSlide();
+</script>
+
 </body>
 </body><script>
 const canvas = document.getElementById('fireworks');
