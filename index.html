@@ -92,40 +92,35 @@
 </style>
 </head>
 <meta charset="utf-8"/>
-<title>Logo Rồng Xoay</title>
+	<!-- Logo rồng xoay kèm liên hệ -->
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+  <div style="
+    width: 150px; 
+    height: 150px; 
+    animation: rotate 50s linear infinite; 
+    transform-origin: center center;
+  ">
+    <img src="logo.png" alt="Logo Rồng Chữ H" style="width: 100%; height: 100%; object-fit: contain;">
+  </div>
+  <div style="margin-top: 8px; font: bold 16px 'UTM', sans-serif; color: #c75757;">
+    Mọi thắc mắc xin liên hệ:<br>
+    <a href="https://www.facebook.com/ltv.lepsobad" target="_blank" style="color: #00aced; font-size: 16px; text-decoration: none;">
+      Long Thành Võ
+    </a>
+  </div>
+</div>
+
+<!-- Thêm keyframes nếu chưa có -->
 <style>
-    body {
-      background-color: #fffddf;
-      margin: 0;
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
     }
-
-    .logo-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 150px;
-      height: 150px;
-      animation: rotate 50s linear infinite;
-      z-index: 9999;
-      transform-origin: center center;
+    to {
+      transform: rotate(360deg);
     }
-
-    .logo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-  </style>
+  }
+</style>
 
 <body><canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
 <div class="logo-container">
