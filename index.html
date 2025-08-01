@@ -1,23 +1,32 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<link href="image/favicon.ico" rel="icon" type="image/png"/>
-<title>❤️ Nguyễn Ngân Hà ❤️</title>
-<link href="./css/default.css" rel="stylesheet" type="text/css"/>
-<script src="./js/jquery.min.js" type="text/javascript"></script>
-<script src="./js/jscex.min.js" type="text/javascript"></script>
-<script src="./js/jscex-parser.js" type="text/javascript"></script>
-<script src="./js/jscex-jit.js" type="text/javascript"></script>
-<script src="./js/jscex-builderbase.min.js" type="text/javascript"></script>
-<script src="./js/jscex-async.min.js" type="text/javascript"></script>
-<script src="./js/jscex-async-powerpack.min.js" type="text/javascript"></script>
-<script charset="utf-8" src="./js/functions.js" type="text/javascript"></script>
-<script charset="utf-8" src="./js/love.js" type="text/javascript"></script>
-<style type="text/css">
-		
-		
-<!--
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="image/favicon.ico" rel="icon" type="image/png"/>
+  <title>
+   ❤️ Nguyễn Ngân Hà ❤️
+  </title>
+  <link href="./css/default.css" rel="stylesheet" type="text/css"/>
+  <script src="./js/jquery.min.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex.min.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex-parser.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex-jit.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex-builderbase.min.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex-async.min.js" type="text/javascript">
+  </script>
+  <script src="./js/jscex-async-powerpack.min.js" type="text/javascript">
+  </script>
+  <script charset="utf-8" src="./js/functions.js" type="text/javascript">
+  </script>
+  <script charset="utf-8" src="./js/love.js" type="text/javascript">
+  </script>
+  <style type="text/css">
+   <!--
 .STYLE1 {color: #fd24c7}
 -->
         
@@ -64,13 +73,10 @@
 
 .slideshow-bottom .prev { left: 5px; }
 .slideshow-bottom .next { right: 5px; }
-
-</style>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-  body, html, * {
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body, html, * {
     font-family: 'Great Vibes', cursive !important;
   }
 
@@ -90,12 +96,38 @@
   #chat-messages {
     font-size: 18px;
   }
-</style>
-</head>
-<meta charset="utf-8"/>
-<title>Logo Rồng Xoay</title>
-<style>
-    body {
+  </style>
+  <style>
+   .logo-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.04;
+  z-index: 1;
+  animation: rotateBackground 120s linear infinite;
+  pointer-events: none;
+}
+.logo-bg img {
+  width: 600px;
+  height: auto;
+}
+@keyframes rotateBackground {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+  </style>
+ </head>
+ <meta charset="utf-8"/>
+ <title>
+  Logo Rồng Xoay
+ </title>
+ <style>
+  body {
       background-color: #fffddf;
       margin: 0;
     }
@@ -125,42 +157,69 @@
         transform: rotate(360deg);
       }
     }
-
-  </style>
-
-<body><canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
-	<!-- Logo mờ xoay giữa màn hình -->
-<div class="logo-bg">
-  <img src="logo.png" alt="Logo nền">
-</div>
-
-<div class="logo-container">
-<img alt="Logo Rồng Chữ H" src="logo.png"/>
-</div>
-
-<!-- Slideshow ảnh nằm giữa logo và chat -->
-<div class="slideshow-bottom">
-  <div class="slide"><img src="image1.JPG" alt="Ảnh 1"></div>
-  <div class="slide"><img src="image2.JPG" alt="Ảnh 2"></div>
-  <div class="slide"><img src="image3.JPG" alt="Ảnh 3"></div>
-  <div class="slide"><img src="image4.jfif" alt="Ảnh 4"></div>
-  <div class="slide"><img src="image5.jfif" alt="Ảnh 5"></div>
-  <div class="slide"><img src="image6.jfif" alt="Ảnh 6"></div>
-  <div class="slide"><img src="image7.jfif" alt="Ảnh 7"></div>
-  <div class="slide"><img src="image8.jfif" alt="Ảnh 8"></div>
-  <div class="slide"><img src="image9.jfif" alt="Ảnh 9"></div>
-  <div class="slide"><img src="image10.jfif" alt="Ảnh 10"></div>
-  <div class="slide"><img src="image11.jfif" alt="Ảnh 11"></div>
-  <div class="slide"><img src="image12.jfif" alt="Ảnh 12"></div>
-  <div class="prev" onclick="plusSlides(-1)">❮</div>
-  <div class="next" onclick="plusSlides(1)">❯</div>
-</div>
-
-<!-- Nội dung website ở đây -->
-<meta charset="utf-8"/>
-<title>Chat với Long</title>
-<style>
-  /* Nền trang */
+ </style>
+ <body>
+  <div class="logo-bg">
+   <img alt="Logo nền" src="logo.png"/>
+  </div>
+  <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+  </canvas>
+  <!-- Logo mờ xoay giữa màn hình -->
+  <div class="logo-bg">
+   <img alt="Logo nền" src="logo.png"/>
+  </div>
+  <!-- Slideshow ảnh nằm giữa logo và chat -->
+  <div class="slideshow-bottom">
+   <div class="slide">
+    <img alt="Ảnh 1" src="image1.JPG"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 2" src="image2.JPG"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 3" src="image3.JPG"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 4" src="image4.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 5" src="image5.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 6" src="image6.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 7" src="image7.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 8" src="image8.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 9" src="image9.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 10" src="image10.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 11" src="image11.jfif"/>
+   </div>
+   <div class="slide">
+    <img alt="Ảnh 12" src="image12.jfif"/>
+   </div>
+   <div class="prev" onclick="plusSlides(-1)">
+    ❮
+   </div>
+   <div class="next" onclick="plusSlides(1)">
+    ❯
+   </div>
+  </div>
+  <!-- Nội dung website ở đây -->
+  <meta charset="utf-8"/>
+  <title>
+   Chat với Long
+  </title>
+  <style>
+   /* Nền trang */
   body {
     background-color: #fffddf  !important;
   }
@@ -232,23 +291,32 @@
       cursor: pointer;
     }
   </style>
-
-<body>
-<!-- Nút mở chat -->
-<button id="chat-button">💬 Chat với chúng tôi</button>
-<!-- Hộp chat -->
-<div id="chat-box">
-<div id="chat-header">Hỗ Trợ Trực Tuyến</div>
-<div id="chat-messages">
-<div><em>Xin chào! Bạn cần hỗ trợ gì?</em></div>
-</div>
-<div id="chat-input">
-<input id="chat-text" placeholder="Nhập tin nhắn..." type="text"/>
-<button onclick="sendMessage()">Gửi</button>
-</div>
-</div>
-<script>
-  const chatButton = document.getElementById("chat-button");
+  <body>
+   <!-- Nút mở chat -->
+   <button id="chat-button">
+    💬 Chat với chúng tôi
+   </button>
+   <!-- Hộp chat -->
+   <div id="chat-box">
+    <div id="chat-header">
+     Hỗ Trợ Trực Tuyến
+    </div>
+    <div id="chat-messages">
+     <div>
+      <em>
+       Xin chào! Bạn cần hỗ trợ gì?
+      </em>
+     </div>
+    </div>
+    <div id="chat-input">
+     <input id="chat-text" placeholder="Nhập tin nhắn..." type="text"/>
+     <button onclick="sendMessage()">
+      Gửi
+     </button>
+    </div>
+   </div>
+   <script>
+    const chatButton = document.getElementById("chat-button");
   const chatBox = document.getElementById("chat-box");
 
   // Hiện/ẩn chat
@@ -308,39 +376,75 @@
       document.getElementById("chat-messages").innerHTML = saved;
     }
   };
-</script>
-<body>
-<div id="main">
-<div id="wrap">
-<div id="text">
-<div id="code">
-<font color="#FF6699"><span class="say">Này, vợ yêu quý của anh ❤️</span><br/>
-<span class="say">Em là người con gái anh yêu nhất ❤️</span><br/>
-<span class="say">Em xinh đẹp nhất ❤️</span><br/>
-<span class="say">Em đáng yêu nhất ❤️</span><br/>
-<span class="say">Em cũng yêu anh nhất ❤️</span><br/>
-<span class="say">Em là một điều may mắn trong cuộc sống của anh ❤️</span><br/>
-<span class="say">..."Có em, anh sẽ chẳng cần điều gì khác ngoài em ️❤️"</span><br/>
-<span class="say">Yêu em cho đến khi hai ta cùng già đi ❤️</span><br/>
-<span class="say">Hãy cứ tin anh em nhé. Ta sẽ có một chuyến đi thật dài và cùng chăm sóc Thiên Tâm và Thiên Duyên em nhé ❤️</span><br/>
-<span class="say"><span class="space"></span> ❤️ Yêu vợ thật nhiều ❤️</span>
-</font>
-</div>
-</div>
-<div id="clock-box" style="text-align: center;">
-  <span style="color: #FF0000;">Long Thành Võ ❤️ Nguyễn Ngân Hà</span>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <span class="STYLE1">Our Loving Time...</span>
-  <div id="clock"></div>
-</div>
-
-<canvas height="680" id="canvas" width="1100"></canvas>
-</div>
-</div>
-<script>
-</script>
-<script>
-    (function(){
+   </script>
+   <body>
+    <div id="main">
+     <div id="wrap">
+      <div id="text">
+       <div id="code">
+        <font color="#FF6699">
+         <span class="say">
+          Này, vợ yêu quý của anh ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Em là người con gái anh yêu nhất ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Em xinh đẹp nhất ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Em đáng yêu nhất ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Em cũng yêu anh nhất ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Em là một điều may mắn trong cuộc sống của anh ❤️
+         </span>
+         <br/>
+         <span class="say">
+          ..."Có em, anh sẽ chẳng cần điều gì khác ngoài em ️❤️"
+         </span>
+         <br/>
+         <span class="say">
+          Yêu em cho đến khi hai ta cùng già đi ❤️
+         </span>
+         <br/>
+         <span class="say">
+          Hãy cứ tin anh em nhé. Ta sẽ có một chuyến đi thật dài và cùng chăm sóc Thiên Tâm và Thiên Duyên em nhé ❤️
+         </span>
+         <br/>
+         <span class="say">
+          <span class="space">
+          </span>
+          ❤️ Yêu vợ thật nhiều ❤️
+         </span>
+        </font>
+       </div>
+      </div>
+      <div id="clock-box" style="text-align: center;">
+       <span style="color: #FF0000;">
+        Long Thành Võ ❤️ Nguyễn Ngân Hà
+       </span>
+       <span class="STYLE1">
+        Our Loving Time...
+       </span>
+       <div id="clock">
+       </div>
+      </div>
+      <canvas height="680" id="canvas" width="1100">
+      </canvas>
+     </div>
+    </div>
+    <script>
+    </script>
+    <script>
+     (function(){
         var canvas = $('#canvas');
 		
         if (!canvas[0].getContext) {
@@ -494,8 +598,8 @@
         runAsync().start();
     })();
     </script>
-<!-- Hiển thị liên hệ -->
-<div style="
+    <!-- Hiển thị liên hệ -->
+    <div style="
   position: fixed;
   top: 20px; 
   right: 20px;
@@ -504,17 +608,15 @@
   z-index: 9999;
   color: #c75757;
 ">
-  <p>
-    Mọi thắc mắc xin liên hệ: 
-    <a href="https://www.facebook.com/ltv.lepsobad" target="_blank" style="color: #00aced; font-size: 22px; text-decoration: none;">
-      Long Thành Võ
-    </a>
-  </p>
-</div>
-
-
-<script>
-  let slideIndex = 0;
+     <p>
+      Mọi thắc mắc xin liên hệ:
+      <a href="https://www.facebook.com/ltv.lepsobad" style="color: #00aced; font-size: 22px; text-decoration: none;" target="_blank">
+       Long Thành Võ
+      </a>
+     </p>
+    </div>
+    <script>
+     let slideIndex = 0;
   let slides = document.querySelectorAll(".slideshow-bottom .slide");
 
   function showSlides(n) {
@@ -536,11 +638,11 @@
 
   showSlides(slideIndex);
   autoSlide();
-</script>
-
-</body>
-</body><script>
-const canvas = document.getElementById('fireworks');
+    </script>
+   </body>
+  </body>
+  <script>
+   const canvas = document.getElementById('fireworks');
 const ctx = canvas.getContext('2d');
 let width = canvas.width = window.innerWidth;
 let height = canvas.height = window.innerHeight;
@@ -607,26 +709,30 @@ window.addEventListener('resize', () => {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
 });
-</script></body></html>
+  </script>
+ </body>
+</html>
 <style>
-	#snowflakeContainer{position:absolute;left:0px;top:0px;}
+ #snowflakeContainer{position:absolute;left:0px;top:0px;}
 	.snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#e97bc1;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
 	.snowflake:hover {cursor:default}
 </style>
 <div id="snowflakeContainer">
-<p class="snowflake">❄</p>
+ <p class="snowflake">
+  ❄
+ </p>
 </div>
 <script style="text/javascript">
-	//<![CDATA[
+ //<![CDATA[
 	var requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var transforms=["transform","msTransform","webkitTransform","mozTransform","oTransform"];var transformProperty=getSupportedPropertyName(transforms);var snowflakes=[];var browserWidth;var browserHeight;var numberOfSnowflakes=50;var resetPosition=false;function setup(){window.addEventListener("DOMContentLoaded",generateSnowflakes,false);window.addEventListener("resize",setResetFlag,false)}setup();function getSupportedPropertyName(b){for(var a=0;a<b.length;a++){if(typeof document.body.style[b[a]]!="undefined"){return b[a]}}return null}function Snowflake(b,a,d,e,c){this.element=b;this.radius=a;this.speed=d;this.xPos=e;this.yPos=c;this.counter=0;this.sign=Math.random()<0.5?1:-1;this.element.style.opacity=0.5+Math.random();this.element.style.fontSize=4+Math.random()*30+"px"}Snowflake.prototype.update=function(){this.counter+=this.speed/5000;this.xPos+=this.sign*this.speed*Math.cos(this.counter)/40;this.yPos+=Math.sin(this.counter)/40+this.speed/30;setTranslate3DTransform(this.element,Math.round(this.xPos),Math.round(this.yPos));if(this.yPos>browserHeight){this.yPos=-50}};function setTranslate3DTransform(a,c,b){var d="translate3d("+c+"px, "+b+"px, 0)";a.style[transformProperty]=d}function generateSnowflakes(){var b=document.querySelector(".snowflake");var h=b.parentNode;browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var d=0;d<numberOfSnowflakes;d++){var j=b.cloneNode(true);h.appendChild(j);var e=getPosition(50,browserWidth);var a=getPosition(50,browserHeight);var c=5+Math.random()*40;var g=4+Math.random()*10;var f=new Snowflake(j,g,c,e,a);snowflakes.push(f)}h.removeChild(b);moveSnowflakes()}function moveSnowflakes(){for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.update()}if(resetPosition){browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.xPos=getPosition(50,browserWidth);a.yPos=getPosition(50,browserHeight)}resetPosition=false}requestAnimationFrame(moveSnowflakes)}function getPosition(b,a){return Math.round(-1*b+Math.random()*(a+2*b))}function setResetFlag(a){resetPosition=true};
 	//]]>
 </script>
 <div style="text-align: center;">
-<<audio id="myAudio" loop>
-  <source src="khobau.mp3" type="audio/mpeg">
-</audio>
-
-<script>
+ &lt;
+ <audio id="myAudio" loop="">
+  <source src="khobau.mp3" type="audio/mpeg"/>
+ </audio>
+ <script>
   function tryPlayAudio() {
     const audio = document.getElementById("myAudio");
     audio.play().catch(() => {
@@ -636,6 +742,7 @@ window.addEventListener('resize', () => {
   }
 
   window.addEventListener("load", tryPlayAudio);
-</script>
-<div>
-</div></div>
+ </script>
+ <div>
+ </div>
+</div>
