@@ -1,586 +1,361 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
- <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="image/favicon.ico" rel="icon" type="image/png"/>
-  <title>
-   ❤️ Nguyễn Ngân Hà ❤️
-  </title>
-  <link href="./css/default.css" rel="stylesheet" type="text/css"/>
-  <script src="./js/jquery.min.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex.min.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex-parser.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex-jit.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex-builderbase.min.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex-async.min.js" type="text/javascript">
-  </script>
-  <script src="./js/jscex-async-powerpack.min.js" type="text/javascript">
-  </script>
-  <script charset="utf-8" src="./js/functions.js" type="text/javascript">
-  </script>
-  <script charset="utf-8" src="./js/love.js" type="text/javascript">
-  </script>
-  <style type="text/css">
-   <!--
-.STYLE1 {color: #fd24c7}
--->
-        
-/* Slideshow nằm giữa logo và chat */
-.slideshow-bottom {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-  height: 200px;
-  z-index: 9998;
-  background-color: rgba(#fffddf);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slideshow-bottom .slide {
-  display: none;
-}
-
-.slideshow-bottom img {
-  max-height: 200px;
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-.slideshow-bottom .prev,
-.slideshow-bottom .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #832c2c;
-  font-size: 22px;
-  font-weight: bold;
-  background-color: rgba(#fffddf);
-  padding: 4px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  user-select: none;
-}
-
-.slideshow-bottom .prev { left: 5px; }
-.slideshow-bottom .next { right: 5px; }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sấm Chớp & Mưa Ma Mị</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
-   body, html, * {
-    font-family: 'Great Vibes', cursive !important;
-  }
-
-  body {
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  h1, h2, h3 {
-    font-size: 32px;
-  }
-
-  .say {
-    font-size: 24px;
-  }
-
-  #chat-messages {
-    font-size: 18px;
-  }
-  </style>
-  <style>
-   .logo-bg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  z-index: 1;
-  animation: rotateBackground 30s linear infinite;
-  pointer-events: none;
-}
-.logo-bg img {
-  width: 1000px;
-  height: auto;
-}
-@keyframes rotateBackground {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-  </style>
- </head>
- <meta charset="utf-8"/>
- <title>
-  Logo Rồng Xoay
- </title>
- <style>
-  body {
-      background-color: #fffddf;
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      font-family: 'Playfair Display', serif;
     }
 
-    .logo-container {
+    body {
+      background: url('https://motionbgs.com/media/1269/jinx-arcane.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    canvas {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 150px;
-      height: 150px;
-      animation: rotate 50s linear infinite;
-      z-index: 9999;
-      transform-origin: center center;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .logo-container img {
+    .logo-center {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      animation: rotate 40s linear infinite;
+      z-index: 9999;
+    }
+
+    .logo-center img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     }
 
     @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
     }
- </style>
- <body>
-  <div class="logo-bg">
-   <img alt="Logo nền" src="logo.png"/>
+
+    .name-block {
+      position: fixed;
+      top: calc(20% + 120px);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 9999;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .top-name {
+      font-size: 48px;
+      font-weight: bold;
+      color: #00f0ff;
+      text-shadow: 0 0 4px #00f0ff, 0 0 8px #00f0ff, 0 0 12px #cc00ff, 0 0 20px #cc00ff;
+      animation: pulseName 2s ease-in-out infinite;
+      margin-bottom: 6px;
+    }
+
+    .bottom-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #ededed;
+      text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee, 0 0 15px #0088ff;
+      animation: pulseName 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseName {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
+    }
+
+    #startScreen {
+      position: fixed;
+      z-index: 10000;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    .footer-links {
+      position: fixed;
+      top: calc(20% + 250px);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .link-btn {
+      width: 280px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    /* Hiệu ứng hover phóng to và đổi màu nền */
+    .link-btn:hover {
+      transform: scale(1.05);
+      background-color: #00ffff !important;
+      box-shadow: 0 0 10px #00ffff;
+      color: #000 !important;
+    }
+
+    /* Hiệu ứng hover cũ bạn có thể giữ hoặc bỏ, mình để lại để bạn dễ chỉnh */
+    .link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .fb { background-color: #3b5998; color: white; }
+    .ig { background-color: #E1306C; color: white; }
+    .yt { background-color: #FF0000; color: white; }
+    .dou { background-color: #5e17eb; color: white; }
+    .dou:hover { background-color: #7f3fff; }
+
+    .phone { background-color: #222; color: white; }
+
+    .contact-box {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 12px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      animation: fadeInUp 1.2s ease;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .contact-box a {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00aced;
+      text-decoration: none;
+      margin-left: 10px;
+      background: rgba(0, 172, 237, 0.15);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .contact-box a:hover {
+      background: rgba(0, 172, 237, 0.3);
+      box-shadow: 0 0 10px #00aced, 0 0 20px #00aced;
+      color: white;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translate(-50%, 40px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .phone-popup {
+      position: fixed;
+      bottom: 120px;
+      right: 30px;
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid #00ffee;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.4);
+      display: none;
+      z-index: 99999;
+      width: 280px;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #00ffee;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .close-btn:hover {
+      color: #ff5b5b;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="rainCanvas"></canvas>
+
+  <div class="logo-center">
+    <img src="logo2.jpg" alt="Logo">
   </div>
-  <canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
-  </canvas>
-  <!-- Logo mờ xoay giữa màn hình -->
-  <div class="logo-bg">
-   <img alt="Logo nền" src="logo.png"/>
+
+  <div class="name-block">
+    <div class="top-name">Nguyễn Ngân Hà</div>
+    <div class="bottom-name">embeNabu</div>
   </div>
-  <!-- Slideshow ảnh nằm giữa logo và chat -->
-  <div class="slideshow-bottom">
-   <div class="slide">
-    <img alt="Ảnh 1" src="image1.JPG"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 2" src="image2.JPG"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 3" src="image3.JPG"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 4" src="image4.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 5" src="image5.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 6" src="image6.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 7" src="image7.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 8" src="image8.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 9" src="image9.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 10" src="image10.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 11" src="image11.jfif"/>
-   </div>
-   <div class="slide">
-    <img alt="Ảnh 12" src="image12.jfif"/>
-   </div>
-   <div class="prev" onclick="plusSlides(-1)">
-    ❮
-   </div>
-   <div class="next" onclick="plusSlides(1)">
-    ❯
-   </div>
+
+  <div class="footer-links">
+    <a href="https://www.facebook.com/nasobad1" class="link-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="https://instagram.com/nabu_ig" class="link-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://www.youtube.com/@Nabu.embenabu" class="link-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    <a href="https://discord.gg/YE3J75u3" class="link-btn" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+    <a href="https://playerduo.net/benajinx" class="link-btn dou" target="_blank"><i class="fas fa-gamepad"></i> PlayerDou</a>
+    <a href="#" class="link-btn phone" onclick="togglePhonePopup(event)"><i class="fas fa-phone-alt"></i> Gọi điện cho tôi</a>
   </div>
-  <!-- Nội dung website ở đây -->
-  
-   <body>
-    <div id="main">
-     <div id="wrap">
-      <div id="text">
-       <div id="code">
-        <font color="#FF6699">
-         <span class="say">
-          Này, vợ yêu quý của anh ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Em là người con gái anh yêu nhất ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Em xinh đẹp nhất ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Em đáng yêu nhất ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Em cũng yêu anh nhất ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Em là một điều may mắn trong cuộc sống của anh ❤️
-         </span>
-         <br/>
-         <span class="say">
-          ..."Có em, anh sẽ chẳng cần điều gì khác ngoài em ️❤️"
-         </span>
-         <br/>
-         <span class="say">
-          Yêu em cho đến khi hai ta cùng già đi ❤️
-         </span>
-         <br/>
-         <span class="say">
-          Hãy cứ tin anh em nhé. Ta sẽ có một chuyến đi thật dài và cùng chăm sóc Thiên Tâm và Thiên Duyên em nhé ❤️
-         </span>
-         <br/>
-         <span class="say">
-          <span class="space">
-          </span>
-          ❤️ Yêu vợ thật nhiều ❤️
-         </span>
-        </font>
-       </div>
-      </div>
-      <div id="clock-box" style="text-align: center;">
-       <span style="color: #FF0000;">
-        Long Thành Võ ❤️ Nguyễn Ngân Hà
-       </span>
-       <span class="STYLE1">
-        Our Loving Time...
-       </span>
-       <div id="clock">
-       </div>
-      </div>
-      <canvas height="680" id="canvas" width="1100">
-      </canvas>
-     </div>
+
+  <div class="phone-popup" id="phonePopup">
+    <div class="popup-header">
+      <span>Liên hệ embeNabu</span>
+      <button class="close-btn" onclick="togglePhonePopup()">&times;</button>
     </div>
-    <script>
-    </script>
-    <script>
-     (function(){
-        var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
+    <p>Số điện thoại: <strong>0348776518</strong><br>Nếu thấy tôi không nghe máy hãy gửi SMS, tôi sẽ sớm liên hệ lại</p>
+  </div>
 
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+  <div class="contact-box">
+    <p>Mọi thắc mắc xin liên hệ: <a href="https://discord.gg/YE3J75u3" target="_blank">embeNabu1</a></p>
+  </div>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+  <div id="startScreen">Bấm vào đây để tìm hiểu Nabu nhé...!</div>
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
+  <audio id="myAudio" loop>
+    <source src="sacmoi.mp3" type="audio/mpeg">
+  </audio>
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#fffddf");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-		    var together = new Date();
-		    together.setFullYear(2018,2 , 12); 			
-		    together.setHours(0);							
-		    together.setMinutes(0);				
-		    together.setSeconds(0);					
-		    together.setMilliseconds(0);			
-
-		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script>
-    <!-- Hiển thị liên hệ -->
-    <div style="
-  position: fixed;
-  top: 20px; 
-  right: 20px;
-  text-align: right;
-  font: bold 20px 'UTM', sans-serif;
-  z-index: 9999;
-  color: #c75757;
-">
-     <p>
-      Mọi thắc mắc xin liên hệ:
-      <a href="https://www.facebook.com/ltv.lepsobad" style="color: #00aced; font-size: 22px; text-decoration: none;" target="_blank">
-       Long Thành Võ
-      </a>
-     </p>
-    </div>
-    <script>
-     let slideIndex = 0;
-  let slides = document.querySelectorAll(".slideshow-bottom .slide");
-
-  function showSlides(n) {
-    slides.forEach(s => s.style.display = "none");
-    slides[n].style.display = "block";
-  }
-
-  function plusSlides(n) {
-    slideIndex += n;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    showSlides(slideIndex);
-  }
-
-  function autoSlide() {
-    plusSlides(1);
-    setTimeout(autoSlide, 4000);
-  }
-
-  showSlides(slideIndex);
-  autoSlide();
-    </script>
-   </body>
-  </body>
   <script>
-   const canvas = document.getElementById('fireworks');
-const ctx = canvas.getContext('2d');
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
-const fireworks = [];
+    const canvas = document.getElementById('rainCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = innerWidth;
+    let h = canvas.height = innerHeight;
+    const drops = [];
+    const dropCount = Math.floor(w / 2);
 
-class Particle {
-  constructor(x, y, angle, speed, color) {
-    this.x = x;
-    this.y = y;
-    this.vx = Math.cos(angle) * speed;
-    this.vy = Math.sin(angle) * speed;
-    this.alpha = 0.3 + Math.random() * 0.3;
-    this.color = color;
-    this.gravity = 0.02;
-    this.size = Math.random() * 2 + 1;
-  }
-  update() {
-    this.vy += this.gravity;
-    this.x += this.vx;
-    this.y += this.vy;
-    this.alpha -= 0.005;
-  }
-  draw(ctx) {
-    ctx.save();
-    ctx.globalAlpha = this.alpha;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-    ctx.fillStyle = this.color;
-    ctx.fill();
-    ctx.restore();
-  }
-}
+    function RainDrop() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.len = Math.random() * 15 + 15;
+      this.speed = Math.random() * 2 + 4;
+      this.opacity = Math.random() * 0.5 + 0.2;
+    }
 
-function createFirework(x, y) {
-  const colors = ['#ffd700', '#ffb6c1', '#ffe4b5', '#add8e6'];
-  const total = 15 + Math.floor(Math.random() * 10);
-  for (let i = 0; i < total; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 2 + 1;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    fireworks.push(new Particle(x, y, angle, speed, color));
-  }
-}
+    RainDrop.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x, this.y + this.len);
+      ctx.strokeStyle = `rgba(200,200,255,${this.opacity})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    };
 
-function animate() {
-  ctx.fillStyle = 'rgba(255, 253, 223, 0.2)';
-  ctx.fillRect(0, 0, width, height);
-  fireworks.forEach((p, i) => {
-    p.update();
-    p.draw(ctx);
-    if (p.alpha <= 0) fireworks.splice(i, 1);
-  });
-  if (Math.random() < 0.05) {
-    const x = Math.random() * width;
-    const y = Math.random() * height * 0.7;
-    createFirework(x, y);
-  }
-  requestAnimationFrame(animate);
-}
+    RainDrop.prototype.update = function() {
+      this.y += this.speed;
+      if (this.y > h) {
+        this.y = -20;
+        this.x = Math.random() * w;
+      }
+    };
 
-animate();
+    for (let i = 0; i < dropCount; i++) drops.push(new RainDrop());
 
-window.addEventListener('resize', () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-});
-  </script>
- </body>
-</html>
-<style>
- #snowflakeContainer{position:absolute;left:0px;top:0px;}
-	.snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#e97bc1;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
-	.snowflake:hover {cursor:default}
-</style>
-<div id="snowflakeContainer">
- <p class="snowflake">
-  ❄
- </p>
-</div>
-<script style="text/javascript">
- //<![CDATA[
-	var requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var transforms=["transform","msTransform","webkitTransform","mozTransform","oTransform"];var transformProperty=getSupportedPropertyName(transforms);var snowflakes=[];var browserWidth;var browserHeight;var numberOfSnowflakes=50;var resetPosition=false;function setup(){window.addEventListener("DOMContentLoaded",generateSnowflakes,false);window.addEventListener("resize",setResetFlag,false)}setup();function getSupportedPropertyName(b){for(var a=0;a<b.length;a++){if(typeof document.body.style[b[a]]!="undefined"){return b[a]}}return null}function Snowflake(b,a,d,e,c){this.element=b;this.radius=a;this.speed=d;this.xPos=e;this.yPos=c;this.counter=0;this.sign=Math.random()<0.5?1:-1;this.element.style.opacity=0.5+Math.random();this.element.style.fontSize=4+Math.random()*30+"px"}Snowflake.prototype.update=function(){this.counter+=this.speed/5000;this.xPos+=this.sign*this.speed*Math.cos(this.counter)/40;this.yPos+=Math.sin(this.counter)/40+this.speed/30;setTranslate3DTransform(this.element,Math.round(this.xPos),Math.round(this.yPos));if(this.yPos>browserHeight){this.yPos=-50}};function setTranslate3DTransform(a,c,b){var d="translate3d("+c+"px, "+b+"px, 0)";a.style[transformProperty]=d}function generateSnowflakes(){var b=document.querySelector(".snowflake");var h=b.parentNode;browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var d=0;d<numberOfSnowflakes;d++){var j=b.cloneNode(true);h.appendChild(j);var e=getPosition(50,browserWidth);var a=getPosition(50,browserHeight);var c=5+Math.random()*40;var g=4+Math.random()*10;var f=new Snowflake(j,g,c,e,a);snowflakes.push(f)}h.removeChild(b);moveSnowflakes()}function moveSnowflakes(){for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.update()}if(resetPosition){browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.xPos=getPosition(50,browserWidth);a.yPos=getPosition(50,browserHeight)}resetPosition=false}requestAnimationFrame(moveSnowflakes)}function getPosition(b,a){return Math.round(-1*b+Math.random()*(a+2*b))}function setResetFlag(a){resetPosition=true};
-	//]]>
-</script>
-<div style="text-align: center;">
- &lt;
- <audio id="myAudio" loop="">
-  <source src="khobau.mp3" type="audio/mpeg"/>
- </audio>
- <script>
-  function tryPlayAudio() {
-    const audio = document.getElementById("myAudio");
-    audio.play().catch(() => {
-      // Nếu bị chặn, đợi người dùng tương tác
-      document.addEventListener("click", () => audio.play(), { once: true });
+    function drawRain() {
+      ctx.clearRect(0, 0, w, h);
+      drops.forEach(d => { d.update(); d.draw(); });
+    }
+
+    const strikes = [];
+    function createLightning() {
+      strikes.push({ x: Math.random() * w, width: Math.random() * 2 + 1, color: Math.random() < 0.3 ? '#caaaff' : 'white', lifetime: 0 });
+    }
+
+    function drawStrikes() {
+      strikes.forEach((s, i) => {
+        ctx.beginPath();
+        ctx.moveTo(s.x, 0);
+        ctx.lineTo(s.x, h);
+        ctx.strokeStyle = s.color;
+        ctx.lineWidth = s.width;
+        ctx.globalAlpha = 0.6 * (1 - s.lifetime / 10);
+        ctx.stroke();
+        s.lifetime++;
+        if (s.lifetime > 10) strikes.splice(i, 1);
+      });
+      ctx.globalAlpha = 1;
+    }
+
+    function animate() {
+      drawRain();
+      drawStrikes();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    setInterval(() => {
+      const count = Math.floor(Math.random() * 3) + 1;
+      for (let i = 0; i < count; i++) setTimeout(createLightning, Math.random() * 200);
+    }, 400);
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
     });
-  }
 
-  window.addEventListener("load", tryPlayAudio);
- </script>
- <div>
- </div>
-</div>
+    document.getElementById("startScreen").addEventListener("click", () => {
+      document.getElementById("myAudio").play();
+      document.getElementById("startScreen").style.display = "none";
+    });
+
+    function togglePhonePopup(e) {
+      if (e) e.preventDefault();
+      const popup = document.getElementById("phonePopup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
